@@ -11,7 +11,7 @@ class DialogActions extends StatelessWidget {
     super.key,
     this.onCancel,
     required this.onConfirm,
-    required this.confirmMessage, 
+    this.confirmMessage, 
     this.buttonsAlignment,
   });
 
@@ -33,7 +33,7 @@ class DialogActions extends StatelessWidget {
               color: CustomColors.grey1
             ),
           ),
-        ),
+        ), 
         const SizedBox(width: 30),
         CustomElevatedButton(
           onPressed: onConfirm, 

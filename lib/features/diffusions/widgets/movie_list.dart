@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:kinema_dashboard/commun/constents/text_styles.dart';
 import 'package:kinema_dashboard/features/diffusions/controllers/diffusions.dart';
 import 'package:kinema_dashboard/features/diffusions/widgets/confirmation_dialog.dart';
+import 'package:kinema_dashboard/features/diffusions/widgets/movie_preview_dialog.dart';
 
 import '../models/movie.dart';
 import 'movie_item.dart';
@@ -66,7 +67,11 @@ class MovieList extends StatelessWidget {
                                   properties: movies[index],
                                   trailing: MovieEditPopupOption( 
                                     color: movie.selectColor, 
-                                    onView: (){},
+                                    onView: () => showDialog(
+                                      context: context,
+                                      barrierColor: Colors.transparent,
+                                      builder: (context) => const MoviePreviewDialog(),
+                                    ),
                                     onDelete: () => showDialog(
                                       context: context,
                                       barrierDismissible: false,

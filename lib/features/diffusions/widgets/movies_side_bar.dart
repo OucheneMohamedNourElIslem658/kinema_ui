@@ -18,7 +18,7 @@ class MoviesSideBar extends StatelessWidget {
               onPressed: () => showDialog(
                 context: context,
                 barrierColor: Colors.transparent,
-                barrierDismissible: true,
+                barrierDismissible: false,
                 builder: (context) {
                   return const AddMovieDialogBox();
                 }

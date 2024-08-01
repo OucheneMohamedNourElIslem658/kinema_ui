@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../constents/colors.dart';
 
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({
     super.key,
-    required this.iconPath,
-    required this.onPressed
+    required this.onPressed,
+    required this.child,
+    this.backgroundColor,
+    this.padding
   });
 
-  final String iconPath;
   final VoidCallback onPressed;
+  final Widget child;
+  final Color? backgroundColor;
+  final double? padding; 
 
   @override
   Widget build(BuildContext context) {
@@ -22,13 +25,10 @@ class CustomIconButton extends StatelessWidget {
         side: const BorderSide(
           color: Colors.transparent
         ),
-        backgroundColor: CustomColors.grey3,
-        padding: const EdgeInsets.all(15)
+        backgroundColor: backgroundColor ?? CustomColors.grey3,
+        padding: EdgeInsets.all(padding ?? 15)
       ),
-      child: SvgPicture.asset(
-        iconPath,
-        height: 30,
-      )
+      child: child
     );
   }
 }

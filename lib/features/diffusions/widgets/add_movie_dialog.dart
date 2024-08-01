@@ -1,15 +1,14 @@
-import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:kinema_dashboard/features/diffusions/controllers/diffusions.dart';
+import 'package:kinema_dashboard/features/diffusions/widgets/movie_language_dropdown.dart';
 
+import '/features/diffusions/controllers/diffusions.dart';
 import '/features/diffusions/widgets/trailers_drop_dow.dart';
 import '../../../commun/widgets/dialog_actions.dart';
-import '/commun/widgets/custom_dropdown_menu.dart';
 import '../../../commun/widgets/dialog_card.dart';
-import '/commun/constents/colors.dart';
 import '/commun/constents/text_styles.dart';
+import 'custom_title_text_field.dart';
+import 'movie_poster.dart';
 
 class AddMovieDialogBox extends StatelessWidget {
   const AddMovieDialogBox({super.key});
@@ -44,7 +43,7 @@ class AddMovieDialogBox extends StatelessWidget {
                       children: [
                         const CustomTitleTextField(),
                         const SizedBox(height: 12),
-                        const TypeDropdownMenu(),
+                        const LanguageDropdownMenu(),
                         const SizedBox(height: 12),
                         TrailersDropdownMenu(trailers: trailers),
                       ],
@@ -62,137 +61,6 @@ class AddMovieDialogBox extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class TypeDropdownMenu extends StatelessWidget {
-  const TypeDropdownMenu({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Movie Type",
-          style: TextStyles.style8,
-        ),
-        const SizedBox(height: 5),
-        CustomDropdownMenu(
-          initialSelection: 3,
-          items: const ["English","French","Arabic","Original"],
-          enableSearch: false,
-          borderColor: CustomColors.grey1,
-          borderThikness: 2,
-        ),
-      ],
-    );
-  }
-}
-
-class CustomTitleTextField extends StatelessWidget {
-  const CustomTitleTextField({
-    super.key,
-    this.controller
-  });
-
-  final TextEditingController? controller;
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "Movie Title",
-          style: TextStyles.style8,
-        ),
-        const SizedBox(height: 8),
-        Container(
-          decoration: BoxDecoration(
-            color: CustomColors.grey2.withOpacity(0.8),
-            borderRadius: BorderRadius.circular(5)
-          ),
-          child: TextFormField(
-            controller: controller,
-            cursorColor: CustomColors.primaryBlack,
-            style: TextStyles.style1.copyWith(
-              color: CustomColors.primaryBlack
-            ),
-            maxLines: 1,
-            decoration: const InputDecoration(
-              enabledBorder: InputBorder.none,
-              disabledBorder: InputBorder.none,
-              errorBorder: InputBorder.none,
-              focusedBorder: InputBorder.none,
-              contentPadding: EdgeInsets.symmetric(
-                horizontal: 10
-              )
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class MoviePoster extends StatelessWidget {
-  const MoviePoster({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        DottedBorder(
-          strokeWidth: 3,
-          dashPattern: const [6,4],
-          color: CustomColors.grey4,
-          child: SizedBox(
-            height: 270,
-            width: 180,
-            child: Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  SvgPicture.asset(
-                    "assets/icons/picture.svg",
-                    width: 65,
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    "Movie Poster",
-                    style: TextStyles.style1.copyWith(
-                      color: CustomColors.grey4
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(height: 10),
-        InkWell(
-          onTap: (){}, 
-          child: Row(
-            children: [
-              SvgPicture.asset("assets/icons/upload.svg",height: 18),
-              const SizedBox(width: 5),
-              Text(
-                "Upload New Picture",
-                style: TextStyles.style5.copyWith(
-                  color: CustomColors.blue1,
-                ),
-              )
-            ],
-          ),
-        )
-      ],
     );
   }
 }

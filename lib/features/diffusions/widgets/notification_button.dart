@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 import '../../../commun/constents/colors.dart';
 import '../../../commun/constents/text_styles.dart';
@@ -25,8 +26,8 @@ class NotificationsButton extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           CustomIconButton(
-            iconPath: "assets/icons/notification.svg",
             onPressed: (){},
+            child: SvgPicture.asset("assets/icons/notification.svg",height: 30),
           ),
           if (isThereNew) Positioned(
             top: 9,

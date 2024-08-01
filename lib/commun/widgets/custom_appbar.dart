@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:kinema_dashboard/features/diffusions/widgets/confirmation_dialog.dart';
 
 import '../constents/text_styles.dart';
@@ -23,7 +24,6 @@ SliverAppBar getCustomAppBar(BuildContext context,{required String title}) {
             color: Colors.white
           ),
           child: CustomIconButton(
-            iconPath: "assets/icons/logout.svg",
             onPressed: () => showDialog(
               context: context,
               barrierDismissible: false,
@@ -37,6 +37,7 @@ SliverAppBar getCustomAppBar(BuildContext context,{required String title}) {
                 );
               },
             ),
+            child: SvgPicture.asset("assets/icons/logout.svg",height: 30),
           ),
         ),
         const SizedBox(width: 5),
