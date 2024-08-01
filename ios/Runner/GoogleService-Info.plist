@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>722261620700-chrpou7qruh53dsn752jl5qaj84pd5k1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.722261620700-chrpou7qruh53dsn752jl5qaj84pd5k1</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>722261620700-gumvnsf83rpj0m6o8bl34js9u60p2des.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDKxZNWLPiFPhe2DMc8lP17kx4BS5gGA5k</string>
+	<key>GCM_SENDER_ID</key>
+	<string>722261620700</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.kinema</string>
+	<key>PROJECT_ID</key>
+	<string>fir-methods-9cc92</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-methods-9cc92.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:722261620700:ios:194d6606ff3374cb9e4119</string>
+</dict>
+</plist>
