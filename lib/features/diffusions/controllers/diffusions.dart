@@ -10,61 +10,56 @@ class DiffusionsController extends GetxController {
     movies = [
       Movie(
         title: "AVATAR 2",
-        posterUrl: "https://via.placeholder.com/50",
-        genres: ["Action", "Adventure"],
-        trailer: Trailer(
-          title: "AVATAR 2", 
-          trailerUrl: "https://www.youtube.com/watch?v=d9MyW72ELq0",
-          isOriginal: true
-        ),
+        picURL: "https://via.placeholder.com/50",
+        type: [
+          Type(name: "Drama"),
+          Type(name: "Action")
+        ],
+        trailerURL:  "https://www.youtube.com/watch?v=d9MyW72ELq0",
         selectColor: const Color(0xFFF4C048),
         backgroundColor: const Color(0xFFFFF9D8),
       ),
       Movie(
         title: "Deadpool",
-        posterUrl: "https://via.placeholder.com/50",
-        genres: ["Comedy", "Action"],
-        trailer: Trailer(
-          title: "Deadpool", 
-          trailerUrl: "https://www.youtube.com/watch?v=ONHBaC-pfsk",
-          isOriginal: true
-        ),
+        picURL: "https://via.placeholder.com/50",
+        type: [
+          Type(name: "Drama"),
+          Type(name: "Action")
+        ],
+        trailerURL: "https://www.youtube.com/watch?v=ONHBaC-pfsk",
         selectColor: const Color(0xFFCF3768),
         backgroundColor: const Color(0xFFFCD6E1),
       ),
       Movie(
         title: "COCO",
-        posterUrl: "https://via.placeholder.com/50",
-        genres: ["Animation", "Family"],
-        trailer: Trailer(
-          title: "COCO", 
-          trailerUrl: "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
-          isOriginal: true
-        ),
+        picURL: "https://via.placeholder.com/50",
+        type: [
+          Type(name: "Drama"),
+          Type(name: "Action")
+        ],
+        trailerURL: "https://www.youtube.com/watch?v=Ga6RYejo6Hk",
         selectColor: const Color(0xFF3B3CC8),
         backgroundColor: const Color(0xFFC5D0E4),
       ),
       Movie(
         title: "Spiderman: Into The Spiderverse",
-        posterUrl: "https://via.placeholder.com/50",
-        genres: ["Animation", "Action"],
-        trailer: Trailer(
-          title: "Spiderman: Into The Spiderverse", 
-          trailerUrl: "https://www.youtube.com/watch?v=g4Hbz2jLxvQ",
-          isOriginal: true
-        ),
+        picURL: "https://via.placeholder.com/50",
+        type: [
+          Type(name: "Drama"),
+          Type(name: "Action")
+        ],
+        trailerURL: "https://www.youtube.com/watch?v=g4Hbz2jLxvQ",
         selectColor: const Color(0xFF5AC78D),
         backgroundColor: const Color(0xFFD1EDD6),
       ),
       Movie(
         title: "Oppenheimer",
-        posterUrl: "https://via.placeholder.com/50",
-        genres: ["Biography", "Drama"],
-        trailer: Trailer(
-          title: "Oppenheimer", 
-          trailerUrl: "https://www.youtube.com/watch?v=bK6ldnjE3Y0",
-          isOriginal: true
-        ),
+        picURL: "https://via.placeholder.com/50",
+        type: [
+          Type(name: "Drama"),
+          Type(name: "Action")
+        ],
+        trailerURL: "https://www.youtube.com/watch?v=bK6ldnjE3Y0",
         selectColor: const Color(0xFF4FCEEA),
         backgroundColor: const Color(0xFFCAF0FD),
       ),
@@ -78,6 +73,7 @@ class DiffusionsController extends GetxController {
   }
 
   late List<Trailer> trailers;
+  
   void initializeTrailersList(){
     trailers = [
       Trailer(

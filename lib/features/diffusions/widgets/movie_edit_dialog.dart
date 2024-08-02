@@ -42,7 +42,7 @@ class MovieEditDialog extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      LanguageDropdownMenu(),
+                      const LanguageDropdownMenu(),
                       const SizedBox(height: 18),
                       MovieDescriptionTextField(
                         controller: TextEditingController(

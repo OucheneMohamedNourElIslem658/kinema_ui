@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kinema_dashboard/commun/constents/text_styles.dart';
-import 'package:kinema_dashboard/features/diffusions/controllers/diffusions.dart';
-import 'package:kinema_dashboard/features/diffusions/widgets/confirmation_dialog.dart';
-import 'package:kinema_dashboard/features/diffusions/widgets/movie_preview_dialog.dart';
 
+import '/commun/constents/text_styles.dart';
+import '/features/diffusions/controllers/diffusions.dart';
+import '/features/diffusions/widgets/confirmation_dialog.dart';
+import '/features/diffusions/widgets/movie_preview_dialog.dart';
 import '../models/movie.dart';
 import 'movie_item.dart';
 
@@ -66,7 +66,7 @@ class MovieList extends StatelessWidget {
                                 child: MovieItem(
                                   properties: movies[index],
                                   trailing: MovieEditPopupOption( 
-                                    color: movie.selectColor, 
+                                    color: movie.selectColor!, 
                                     onView: () => showDialog(
                                       context: context,
                                       barrierColor: Colors.transparent,

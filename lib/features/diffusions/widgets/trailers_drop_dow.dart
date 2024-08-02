@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:kinema_dashboard/commun/constents/colors.dart';
-import 'package:kinema_dashboard/features/diffusions/models/movie.dart';
 
+import '../models/movie.dart';
+import '/commun/constents/colors.dart';
 import '../../../commun/constents/text_styles.dart';
 
 class TrailersDropdownMenu extends StatefulWidget {

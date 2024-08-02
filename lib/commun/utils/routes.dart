@@ -1,9 +1,10 @@
 // Create keys for `root` & `section` navigator avoiding unnecessary rebuilds
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kinema_dashboard/features/diffusions/screens/diffusions.dart';
-import 'package:kinema_dashboard/features/reservations/screens/reservations.dart';
-import 'package:kinema_dashboard/screens/landing.dart';
+
+import '/features/diffusions/screens/diffusions.dart';
+import '/features/reservations/screens/reservations.dart';
+import '/screens/landing.dart';
 
 final rootNavigatorKey = GlobalKey<NavigatorState>();
 

@@ -1,21 +1,156 @@
 import 'package:flutter/material.dart';
 
+import 'diffusion.dart';
+
 class Movie {
-  final String title;
-  final String posterUrl;
-  final List<String> genres;
-  final Color selectColor;
-  final Color backgroundColor;
-  final Trailer trailer;
+  int id;
+  String title;
+  String description;
+  List<Type> type;
+  String language;
+  List<Actor> cast;
+  double rate;
+  String trailerURL;
+  Duration duration;
+  int voteCount;
+  int trailerViews;
+  String picURL;
+  String po;
+  List<Diffusion> diffusions;
+  Color? selectColor;
+  Color? backgroundColor;
 
   Movie({
-    required this.title,
-    required this.posterUrl,
-    required this.genres,
-    required this.selectColor,
-    required this.backgroundColor,
-    required this.trailer
+    this.id = 0,
+    this.title = "",
+    this.description = "",
+    this.type = const [],
+    this.language = "",
+    this.cast = const [],
+    this.rate = 0.0,
+    this.trailerURL = "",
+    this.duration = Duration.zero,
+    this.voteCount = 0,
+    this.trailerViews = 0,
+    this.picURL = "",
+    this.po = "",
+    this.diffusions = const [],
+    this.selectColor,
+    this.backgroundColor
   });
+
+  factory Movie.fromJson(Map<String, dynamic> json) {
+    return Movie(
+      id: json['id'] ?? 0,
+      title: json['title'] ?? "",
+      description: json['description'] ?? "",
+      type: (json['type'] as List<dynamic>?)
+              ?.map((e) => Type.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      language: json['language'] ?? "",
+      cast: (json['cast'] as List<dynamic>?)
+              ?.map((e) => Actor.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      rate: (json['rate'] ?? 0.0).toDouble(),
+      trailerURL: json['trailerURL'] ?? "",
+      duration: Duration(microseconds: json['duration'] ?? 0),
+      voteCount: json['voteCount'] ?? 0,
+      trailerViews: json['trailerViews'] ?? 0,
+      picURL: json['picURL'] ?? "",
+      po: json['p_o'] ?? "",
+      diffusions: (json['diffusions'] as List<dynamic>?)
+              ?.map((e) => Diffusion.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'description': description,
+      'type': type.map((e) => e.toJson()).toList(),
+      'language': language,
+      'cast': cast.map((e) => e.toJson()).toList(),
+      'rate': rate,
+      'trailerURL': trailerURL,
+      'duration': duration.inMicroseconds,
+      'voteCount': voteCount,
+      'trailerViews': trailerViews,
+      'picURL': picURL,
+      'p_o': po,
+      'diffusions': diffusions.map((e) => e.toJson()).toList(),
+    };
+  }
+}
+
+class Type {
+  int id;
+  String name;
+  List<Movie> movies;
+
+  Type({
+    this.id = 0,
+    this.name = "",
+    this.movies = const [],
+  });
+
+  factory Type.fromJson(Map<String, dynamic> json) {
+    return Type(
+      id: json['id'] ?? 0,
+      name: json['name'] ?? "",
+      movies: (json['movies'] as List<dynamic>?)
+              ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'movies': movies.map((e) => e.toJson()).toList(),
+    };
+  }
+}
+
+class Actor {
+  int id;
+  String name;
+  String picURL;
+  List<Movie> movies;
+
+  Actor({
+    this.id = 0,
+    this.name = "",
+    this.picURL = "",
+    this.movies = const [],
+  });
+
+  factory Actor.fromJson(Map<String, dynamic> json) {
+    return Actor(
+      id: json['id'] ?? 0,
+      name: json['name'] ?? "",
+      picURL: json['picURL'] ?? "",
+      movies: (json['movies'] as List<dynamic>?)
+              ?.map((e) => Movie.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'picURL': picURL,
+      'movies': movies.map((e) => e.toJson()).toList(),
+    };
+  }
 }
 
 class Trailer {

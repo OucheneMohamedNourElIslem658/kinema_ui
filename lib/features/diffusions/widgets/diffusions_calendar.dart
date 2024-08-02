@@ -3,10 +3,10 @@ import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:kinema_dashboard/features/diffusions/widgets/confirmation_dialog.dart';
 
+import '../models/movie.dart';
 import '/commun/constents/colors.dart';
 import '/commun/constents/text_styles.dart';
 import '/features/diffusions/controllers/diffusions.dart';
-import '/features/diffusions/models/movie.dart';
 import '/features/diffusions/widgets/movie_item.dart';
 
 import 'diffusion_calendar_search_bar.dart';
